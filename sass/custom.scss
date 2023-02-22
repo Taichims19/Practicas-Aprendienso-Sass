@@ -1,0 +1,85 @@
+// requerimos un grid-system de 12 columnas
+//necesitamos un mixin que calcule el ancho
+// en porcentajes segun el numero de columnas
+
+@mixin grid($cols,$cols-total:12) {
+    width: percentage($cols / $cols-total);
+}
+.cols-6 { 
+    @include grid(3);
+}
+
+//media queries 
+//requerimos un mixin que cree un selector para una media queries
+
+.selector {
+    @media screen and (min-width:20em){
+        //codigo;
+    }
+}
+@mixin mq($min-width){
+    @media screen and (min-width:$min-width) {
+        @content;
+    }
+}
+.box { 
+    color: red;
+    @include mq(40em) {
+        color: green;
+    }
+    @include mq(60em) {
+        color: purple;
+    }
+}
+// otro ejemplo seria 
+
+ @mixin bp($point) {
+    @if $point == small {
+        @media (min-width:478px) { @content;}
+    }
+    @else if $point == medium {
+        @media (min-width: 1024px) { @content;}
+    }
+    @else if $point == large {
+        @media (min-width:1248px) {@content;}
+    } @else {
+        @media screen and (min-width:$point) {
+            @content;
+        }
+    }
+ }
+
+ .box2 {
+    color: red;
+
+    @include bp(small) {
+        color: yellow;
+    }
+    @include bp(medium) {
+        color: lightblue;
+    }
+ }
+
+ //requerimos un mixin que asigne dimnesiones de alto y ancho a un elemento con una proporcion determinada (p.ej. 16.:9) 
+
+ //@include proporcion (alto:16,ancho:9)
+
+ @mixin ratio($w,$h){
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: percentage($h / $w);
+ }
+
+ .video {
+    @include ratio(16,9);
+    position: relative;
+    iframe,
+    video,
+    object {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+ }
+ //esto es para hacer un video responsive 
