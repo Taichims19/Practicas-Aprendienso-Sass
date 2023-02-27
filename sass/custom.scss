@@ -1,85 +1,159 @@
-// requerimos un grid-system de 12 columnas
-//necesitamos un mixin que calcule el ancho
-// en porcentajes segun el numero de columnas
+@use "sass:math";
 
-@mixin grid($cols,$cols-total:12) {
-    width: percentage($cols / $cols-total);
+// css funtions
+//rgb rgba
+$color: rgb(12, 152, 12);
+
+.box {
+  width: calc(100% - 10%);
 }
-.cols-6 { 
-    @include grid(3);
+
+//scale (x,y)
+
+.box {
+  transform: scale(1.2);
+}
+//rotate()
+//translate(x,y) X, Y
+// Linear-gradien() repating-linear-gradient()
+//radial-gradient() repeating-linear-gradient()
+//attr() es para devolver un atributo se usa mucho con pseudoelementos
+
+//funciones nativas en sass
+
+//unquote () elimina las comillas de un string quote () le añade comillas a un string
+
+$string1: "no-";
+$string2: repeat;
+$string3: $string1 + $string2;
+$font-size: 12px;
+
+.data {
+  value: $string3;
+  background-repeat: unquote($string3);
+  &::before {
+    content: quote(#{$font-size});
+  }
 }
 
-//media queries 
-//requerimos un mixin que cree un selector para una media queries
+//percentage ()te convierte un numero a su porcentaje   round()lo que hace es redondear un numero a su valor mas cercano
 
-.selector {
-    @media screen and (min-width:20em){
-        //codigo;
-    }
+.percentage {
+  $width: math.div(3, 5);
+  width: percentage(nth($width, 1));
+  $heiht: math.div(3, 5);
+  height: round($heiht);
 }
-@mixin mq($min-width){
-    @media screen and (min-width:$min-width) {
-        @content;
-    }
+//1 es siempre 100% los 00 equivalen a los 2ceros del %
+
+// nth($list,$index), en sass es 1,0 a diferencia de los lenguajes de programacion, y es para obtener un valor en una lista  .como primer parametro pasamos la lista y como segundo parametro el elemento que estamos buscando
+//map-get($map,$key)es una funcion para obtener un valor de un mapa, pasas el mapa y pasas la clave y te devuelve el valor para obtener un elemento en un mapa
+
+//type-of () para saber el tipo de dato que es
+
+//Unit()devuelve la unidad de medida de un numero (como string)
+$unit: 20em;
+.unit {
+  width: unit($unit);
 }
-.box { 
-    color: red;
-    @include mq(40em) {
-        color: green;
-    }
-    @include mq(60em) {
-        color: purple;
-    }
+// Unitless()
+//devuelve un boolean
+//true si el dato no tiene unidad
+//false si el dato si tiene unidad
+
+.unitless {
+  value: unitless($unit);
 }
-// otro ejemplo seria 
+//true si tiene una unidad ejm em px rem etc, si no tiene unidad es true- false=falso true=verdadero, se usa para haver comprobaciones y saber si un numero tiene o no tiene unidad
+//tip
+$unit2: 20em + 2;
+.unit2 {
+  width: $unit2;
+}
+//se suman las unidades que ya tenemos y el numero entero se le suma a la parte numeral y la unidad se queda tal cual
 
- @mixin bp($point) {
-    @if $point == small {
-        @media (min-width:478px) { @content;}
-    }
-    @else if $point == medium {
-        @media (min-width: 1024px) { @content;}
-    }
-    @else if $point == large {
-        @media (min-width:1248px) {@content;}
-    } @else {
-        @media screen and (min-width:$point) {
-            @content;
-        }
-    }
- }
+//crear nuestras propias funciones
+@function micalculo() {
+  @return valor;
+}
+@function suma($a...) {
+  //si se le añaden los 3 ... recibe mas de un parametro
+  @return $a;
+}
+.suma {
+  width: suma(10em, 30em);
+}
 
- .box2 {
-    color: red;
+//ejercicios
 
-    @include bp(small) {
-        color: yellow;
-    }
-    @include bp(medium) {
-        color: lightblue;
-    }
- }
+// function pixeles a em
+@function em($elemento, $padre: 16px) {
+  $em: math.div($elemento, $padre) * 1em;
+  @return $em;
+}
+p {
+  font-size: em(8px);
+}
 
- //requerimos un mixin que asigne dimnesiones de alto y ancho a un elemento con una proporcion determinada (p.ej. 16.:9) 
+div {
+  $fz: 24px;
+  font-size: $fz;
+  p {
+    font-size: em(7px, $fz);
+  }
+}
 
- //@include proporcion (alto:16,ancho:9)
+$path: "../../../dist/assets/img/";
 
- @mixin ratio($w,$h){
-    height: 0;
-    overflow: hidden;
-    width: 100%;
-    padding-bottom: percentage($h / $w);
- }
+// image path ruta de imagen
+@function imgPath($img) {
+  @return url($path + $img);
+}
 
- .video {
-    @include ratio(16,9);
-    position: relative;
-    iframe,
-    video,
-    object {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
- }
- //esto es para hacer un video responsive 
+div {
+  background: imgPath("bg.jpg");
+}
+
+//multiples box-shadow
+@function long-shadow($number, $color) {
+  $box-shadow: 1px 1px #{$color};
+  @for $i from 2 through $number {
+    $box-shadow: "#{$box-shadow}, #{$i}px #{$i}px #{$color}";
+  }
+  @return unquote($box-shadow);
+}
+.long-shadow {
+  $color: green;
+  box-shadow: long-shadow(12, blue);
+  width: 100px;
+  height: 100px;
+  background: lighten($color, 10);
+}
+.long-shadow2 {
+  margin-top: 100px;
+  $color: green;
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  background: lighten($color, 10);
+  box-shadow: long-shadow(20, rgb(225, 0, 255));
+  border-radius: 50%;
+  font-size: em(10px);
+  text-align: center;
+  line-height: 100px;
+}
+
+// conertir numero con unidad a solo numero
+//imput 20em, output: 20.
+@function no-unit($number) {
+  @if no unitless($number) {
+    $unit:($number * 0) + 1;
+    $no-unit: math.div($number, $unit); 
+
+    @return $no-unit;
+  }
+}
+
+.no-unit {
+  line-height: no-unit(200deg);
+}
