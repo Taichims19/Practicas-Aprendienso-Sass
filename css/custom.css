@@ -1,1 +1,23 @@
-.gallery{display:flex;flex-wrap:wrap}.gallery photo,.gallery .photo{width:25%}.column-3{background:#add8e6;color:aqua;color:green}body::before{content:"El parametro de '$col' no puede ser mayor o superar a '$max-cols'";display:block;padding-bottom:1em;font-family:monospace;background:#f08080}/*# sourceMappingURL=custom.css.map */
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.gallery photo, .gallery .photo {
+  width: 25%;
+}
+
+.column-3 {
+  background: lightblue;
+  color: aqua;
+  color: green;
+}
+body::before {
+  content: "El parametro de '$col' no puede ser mayor o superar a '$max-cols'";
+  display: block;
+  padding-bottom: 1em;
+  font-family: monospace;
+  background: lightcoral;
+}/*# sourceMappingURL=custom.css.map */
