@@ -1,44 +1,24 @@
 @use "sass:math";
-// condicionales; son condiciones, si secumple una condicion se ejecuta cierta parte de codigo y si no se cumple, no se ejecuta
-@mixin grid($child, $number) {
-  display: flex;
-  flex-wrap: wrap;
+//02-@for 
+// @for $i from <start> through <end> {
+//   codigo que se repite en bucle hasta el numero <end> ej: start:1 hasta el end:20
+// }
 
-  @if $child == li {
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
+// @for $i from <start> to <end> {
+//   codigo que se repite en bucle hasta el numero <end-1> ej: start:1 hasta el end:19 , asi el end este marcado como 20
+// }
 
-  #{$child}, .#{$child} {
-    width: math.div(100%, $number);
+@for $i from 1 through 10 {
+  .item-#{$i}{
+    width: percentage(math.div($i , 10));
   }
-}
-.gallery {
-  @include grid(photo, 4);
 }
 
-@mixin columns($col,$max-cols:12){
-@if $col <= $max-cols {
-  width: percentage(math.div($col,$max-cols));
-} @else {
-  @at-root {
-    body {
-      &::before {
-    content: "El parametro de '$col' no puede ser mayor o superar a '$max-cols'";
-    display: block;
-    padding-bottom: 1em;
-    font-family:monospace;
-    background: lightcoral;
+$list :"blue", "red", "green", "yellow", "magenta", "purple" ;
+@for $i from 1 through length($list){
+  $current: nth($list,$i);
+  .button.#{$current} {
+    background-color: unquote($current);
   }
-    }
-  }
-}
-}
-.column-3 {
-  @include columns(13);
-  background: lightblue;
-  color: aqua;
-  color: green;
+  
 }

@@ -1,23 +1,63 @@
-.gallery {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.gallery photo, .gallery .photo {
-  width: 25%;
+.item-1 {
+  width: 10%;
 }
 
-.column-3 {
-  background: lightblue;
-  color: aqua;
-  color: green;
+.item-2 {
+  width: 20%;
 }
-body::before {
-  content: "El parametro de '$col' no puede ser mayor o superar a '$max-cols'";
-  display: block;
-  padding-bottom: 1em;
-  font-family: monospace;
-  background: lightcoral;
+
+.item-3 {
+  width: 30%;
+}
+
+.item-4 {
+  width: 40%;
+}
+
+.item-5 {
+  width: 50%;
+}
+
+.item-6 {
+  width: 60%;
+}
+
+.item-7 {
+  width: 70%;
+}
+
+.item-8 {
+  width: 80%;
+}
+
+.item-9 {
+  width: 90%;
+}
+
+.item-10 {
+  width: 100%;
+}
+
+.button.blue {
+  background-color: blue;
+}
+
+.button.red {
+  background-color: red;
+}
+
+.button.green {
+  background-color: green;
+}
+
+.button.yellow {
+  background-color: yellow;
+}
+
+.button.magenta {
+  background-color: magenta;
+}
+
+.button.purple {
+  background-color: purple;
 }/*# sourceMappingURL=custom.css.map */
