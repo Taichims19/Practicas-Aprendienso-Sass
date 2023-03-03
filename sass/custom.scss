@@ -1,24 +1,61 @@
 @use "sass:math";
-//02-@for 
-// @for $i from <start> through <end> {
-//   codigo que se repite en bucle hasta el numero <end> ej: start:1 hasta el end:20
-// }
+//03-each cada elemento en español,le vamos a ejecutar una accion especifica a cada elemento , se usa para recorrer mapas o recorrer listas
+/*
+@each $item in $list {
+  mi codigo 
+  la variable item va a cambiar en cada iterracion , una iteracion es una repeticion, la primera vez $item va a ser la primera variable de esa lista, la segunda vez, la segunda, y asi consecutivamente
+}
+@each para mapas 
+@each $key, $value in $map {
+  mi codigo
+  la variable $key representaria la clave, el nombre de la propiedad en cada elemento de la lsta, $value el valor de la propiedad 
+}
 
-// @for $i from <start> to <end> {
-//   codigo que se repite en bucle hasta el numero <end-1> ej: start:1 hasta el end:19 , asi el end este marcado como 20
-// }
-
-@for $i from 1 through 10 {
-  .item-#{$i}{
-    width: percentage(math.div($i , 10));
+*/
+@mixin transicion($propiedad, $inicio, $final, $duracion: 0.3s, $curva: ease-in-out) {
+  #{$propiedad}: $inicio;
+  transition: $propiedad $duracion $curva;
+  &:hover {
+    #{$propiedad}: $final;
   }
 }
 
-$list :"blue", "red", "green", "yellow", "magenta", "purple" ;
-@for $i from 1 through length($list){
-  $current: nth($list,$i);
-  .button.#{$current} {
-    background-color: unquote($current);
+.boton {
+  @include transicion(background-color, #333, #000);
+  @include transicion(color, #fff, #ccc);
+}
+
+$colors:"blue", "yellow", "purple", "red","green";
+
+@each $color in $colors {
+  .button.#{$color} {
+    background-color: unquote($color);
   }
-  
+}
+ 
+
+$networks: (
+  facebook:blue,
+  twitter: lightblue,
+  redit:purple,
+  youtube:red,
+  youtube-naranja:orange
+);
+
+@each $network, $color in $networks {
+  .button.#{$network} {
+    background-color: $color;
+  }
+}
+
+$messages: (
+  alert:orange,
+  error:red,
+  success:green
+);
+
+@each $message, $color in $messages {
+  .button.#{$message} {
+    background-color: $color;
+  }
 }

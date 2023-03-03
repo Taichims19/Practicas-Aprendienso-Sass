@@ -1,45 +1,40 @@
-.item-1 {
-  width: 10%;
+/*
+@each $item in $list {
+  mi codigo 
+  la variable item va a cambiar en cada iterracion , una iteracion es una repeticion, la primera vez $item va a ser la primera variable de esa lista, la segunda vez, la segunda, y asi consecutivamente
+}
+@each para mapas 
+@each $key, $value in $map {
+  mi codigo
+  la variable $key representaria la clave, el nombre de la propiedad en cada elemento de la lsta, $value el valor de la propiedad 
 }
 
-.item-2 {
-  width: 20%;
+*/
+.boton {
+  background-color: #333;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  color: #fff;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
-
-.item-3 {
-  width: 30%;
+.boton:hover {
+  background-color: #000;
 }
-
-.item-4 {
-  width: 40%;
-}
-
-.item-5 {
-  width: 50%;
-}
-
-.item-6 {
-  width: 60%;
-}
-
-.item-7 {
-  width: 70%;
-}
-
-.item-8 {
-  width: 80%;
-}
-
-.item-9 {
-  width: 90%;
-}
-
-.item-10 {
-  width: 100%;
+.boton:hover {
+  color: #ccc;
 }
 
 .button.blue {
   background-color: blue;
+}
+
+.button.yellow {
+  background-color: yellow;
+}
+
+.button.purple {
+  background-color: purple;
 }
 
 .button.red {
@@ -50,14 +45,34 @@
   background-color: green;
 }
 
-.button.yellow {
-  background-color: yellow;
+.button.facebook {
+  background-color: blue;
 }
 
-.button.magenta {
-  background-color: magenta;
+.button.twitter {
+  background-color: lightblue;
 }
 
-.button.purple {
+.button.redit {
   background-color: purple;
+}
+
+.button.youtube {
+  background-color: red;
+}
+
+.button.youtube-naranja {
+  background-color: orange;
+}
+
+.button.alert {
+  background-color: orange;
+}
+
+.button.error {
+  background-color: red;
+}
+
+.button.success {
+  background-color: green;
 }/*# sourceMappingURL=custom.css.map */
