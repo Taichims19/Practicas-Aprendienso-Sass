@@ -1,46 +1,6 @@
-.facebook {
-  background-color: blue;
-  margin: 1px;
-}
-
-.twitter {
-  background-color: lightblue;
-  margin: 2px;
-}
-
-.youtube {
-  background-color: red;
-  margin: 3px;
-}
-
-.data {
-  value: red;
-}
-
-.data {
-  value: green;
-}
-
-.blue-base {
-  background-color: blue;
-}
-
-.blue-dark {
-  background-color: blue;
-}
-
-.blue-light {
-  background-color: blue;
-}
-
-.green-base {
-  background-color: green;
-}
-
-.green-dark {
-  background-color: green;
-}
-
-.green-light {
-  background-color: green;
+.inspect {
+  value: (k1: v1, k2: v2);
+  variable-exists: true;
+  function-exists: true;
+  width: 30px;
 }/*# sourceMappingURL=custom.css.map */

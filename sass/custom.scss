@@ -1,57 +1,34 @@
 @use "sass:math";
-//04-ejercicios
-$networks: (facebook,blue,1px),
-          (twitter,lightblue,2px),
-          (youtube,red,3px);
+ //funciones de introspeccion
+ //type-of()
+ //unit()
+ //unitless
+ //inspect() cuando tenemos problemas para compilar
+ //inspect nos ayuda saber que valor es el que estamos 
+ //compilando y saber cual es el posible error al ver el valor 
+ //que nos estamos trayendo 
+ //las siguientes evaluan si existen
+ //las variables, funciones o mixins
+      //variable-exists (variable)
+      //function-exists(funcionName)
+      //mixin-exists(mixinName) 
+//call () como primer parametro
+//pasamos a la funcion y como segundo
+//parametro el valor
 
-
- @each $network in $networks {
- $selector: nth($network,1);
-.#{$selector}{
-  background-color: nth($network,2);
-              margin: nth($network,3);
- }
-}
-
-//crear funciones para recuperar un valor
-//dentro de listas anidadas
-@function sublist($list,$index,$subindex){
-  $sublist:nth($list,$index);
-  $valor:nth($sublist,$subindex);
-  @return $valor;
-}
-.data {
-  value: sublist($networks,3,2);
-}
-$colors: (
-  blue : (
-    base: blue,
-    dark: darken(blue,10),
-    light: lighten(blue,10)
-  ),
-  green : (
-    base: green,
-    dark: darken(green,10),
-    light: lighten(green,10)
-  )
-
+ $var:20px;
+$map: (
+k1: v1,
+k2: v2
 );
-
-@function submap ($map,$key, $subkey){
- $submap:map-get($map , $key );
- $value:map-get($submap, $subkey);
- @return $value;
+@function double($val){
+  @return $val * 2;
 }
 
-.data {
-  value:submap($colors,green ,base); 
-}
-
-@each $color, $subcolors in $colors {
-  @each $type, $value in $subcolors {
-    .#{"#{$color}-#{$type}"} {
-      background-color: $color;
-    }
-  }
+.inspect {
+  value: inspect($map);
+  variable-exists: variable-exists(map);
+  function-exists:function-exists(double);
+  width: call(double,15px);
 }
 
