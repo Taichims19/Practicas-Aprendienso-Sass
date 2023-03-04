@@ -1,78 +1,46 @@
-/*
-@each $item in $list {
-  mi codigo 
-  la variable item va a cambiar en cada iterracion , una iteracion es una repeticion, la primera vez $item va a ser la primera variable de esa lista, la segunda vez, la segunda, y asi consecutivamente
-}
-@each para mapas 
-@each $key, $value in $map {
-  mi codigo
-  la variable $key representaria la clave, el nombre de la propiedad en cada elemento de la lsta, $value el valor de la propiedad 
+.facebook {
+  background-color: blue;
+  margin: 1px;
 }
 
-*/
-.boton {
-  background-color: #333;
-  -webkit-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
-  color: #fff;
-  -webkit-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
-}
-.boton:hover {
-  background-color: #000;
-}
-.boton:hover {
-  color: #ccc;
+.twitter {
+  background-color: lightblue;
+  margin: 2px;
 }
 
-.button.blue {
+.youtube {
+  background-color: red;
+  margin: 3px;
+}
+
+.data {
+  value: red;
+}
+
+.data {
+  value: green;
+}
+
+.blue-base {
   background-color: blue;
 }
 
-.button.yellow {
-  background-color: yellow;
+.blue-dark {
+  background-color: blue;
 }
 
-.button.purple {
-  background-color: purple;
+.blue-light {
+  background-color: blue;
 }
 
-.button.red {
-  background-color: red;
-}
-
-.button.green {
+.green-base {
   background-color: green;
 }
 
-.button.facebook {
-  background-color: blue;
+.green-dark {
+  background-color: green;
 }
 
-.button.twitter {
-  background-color: lightblue;
-}
-
-.button.redit {
-  background-color: purple;
-}
-
-.button.youtube {
-  background-color: red;
-}
-
-.button.youtube-naranja {
-  background-color: orange;
-}
-
-.button.alert {
-  background-color: orange;
-}
-
-.button.error {
-  background-color: red;
-}
-
-.button.success {
+.green-light {
   background-color: green;
 }/*# sourceMappingURL=custom.css.map */

@@ -1,61 +1,57 @@
 @use "sass:math";
-//03-each cada elemento en español,le vamos a ejecutar una accion especifica a cada elemento , se usa para recorrer mapas o recorrer listas
-/*
-@each $item in $list {
-  mi codigo 
-  la variable item va a cambiar en cada iterracion , una iteracion es una repeticion, la primera vez $item va a ser la primera variable de esa lista, la segunda vez, la segunda, y asi consecutivamente
-}
-@each para mapas 
-@each $key, $value in $map {
-  mi codigo
-  la variable $key representaria la clave, el nombre de la propiedad en cada elemento de la lsta, $value el valor de la propiedad 
-}
+//04-ejercicios
+$networks: (facebook,blue,1px),
+          (twitter,lightblue,2px),
+          (youtube,red,3px);
 
-*/
-@mixin transicion($propiedad, $inicio, $final, $duracion: 0.3s, $curva: ease-in-out) {
-  #{$propiedad}: $inicio;
-  transition: $propiedad $duracion $curva;
-  &:hover {
-    #{$propiedad}: $final;
-  }
+
+ @each $network in $networks {
+ $selector: nth($network,1);
+.#{$selector}{
+  background-color: nth($network,2);
+              margin: nth($network,3);
+ }
 }
 
-.boton {
-  @include transicion(background-color, #333, #000);
-  @include transicion(color, #fff, #ccc);
+//crear funciones para recuperar un valor
+//dentro de listas anidadas
+@function sublist($list,$index,$subindex){
+  $sublist:nth($list,$index);
+  $valor:nth($sublist,$subindex);
+  @return $valor;
 }
-
-$colors:"blue", "yellow", "purple", "red","green";
-
-@each $color in $colors {
-  .button.#{$color} {
-    background-color: unquote($color);
-  }
+.data {
+  value: sublist($networks,3,2);
 }
- 
+$colors: (
+  blue : (
+    base: blue,
+    dark: darken(blue,10),
+    light: lighten(blue,10)
+  ),
+  green : (
+    base: green,
+    dark: darken(green,10),
+    light: lighten(green,10)
+  )
 
-$networks: (
-  facebook:blue,
-  twitter: lightblue,
-  redit:purple,
-  youtube:red,
-  youtube-naranja:orange
 );
 
-@each $network, $color in $networks {
-  .button.#{$network} {
-    background-color: $color;
+@function submap ($map,$key, $subkey){
+ $submap:map-get($map , $key );
+ $value:map-get($submap, $subkey);
+ @return $value;
+}
+
+.data {
+  value:submap($colors,green ,base); 
+}
+
+@each $color, $subcolors in $colors {
+  @each $type, $value in $subcolors {
+    .#{"#{$color}-#{$type}"} {
+      background-color: $color;
+    }
   }
 }
 
-$messages: (
-  alert:orange,
-  error:red,
-  success:green
-);
-
-@each $message, $color in $messages {
-  .button.#{$message} {
-    background-color: $color;
-  }
-}
