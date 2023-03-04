@@ -1,32 +1,37 @@
 @use "sass:math";
- /*clase7-pt2 funciones para strings
+ /* 
+clase7-pt3 numbers
+  round()redondea el numero mas cercano
+  mas dinamico 1.5 hacia arriba
+  1.4 hacia abajo
+  percentage()da el valor en porcentaje
 
-  quote() pone comillas a los string
-    unquote() quita comillas a los string
-    to-upper-case() convierte el string todo a mayusculas
-    to-lower-case()convierte el string todo a minuscula
+  floor(number)para redondear hacia 
+  abajo 3.5 = 3
+  ceil(number)para redondear hacia 
+  arriba 3.4 = 4
 
-Las funciones de strings comienzan con str-
+  // Nota: max y min no reciben listas como parametros
+    max(numbers...)el numero mayor de una serie
+    de numeros
+    min(numbers...)el numero menor de una serie
+    de numeros
+solo aceptan numeros como parametros,no
+listas
+  // devuelve el valor absoluto (sin signo)
+    abs(number) obtener el valor absoluto de
+    un numero (sin el signo)
 
-str-length($string) ->devuelve el número de caracteres en el string
+  random([limite]) para obtener un numero
+  aleatorio 0 a 1 si no escribimos nada []significa que es opcional el parametro
 
-str-index($string,'subcadena') -> nos devuelve indice de la subcadena, la posicion que tendra la subcadena dentro de la cadena mayor
+*/
 
-str-insert($string,'subcadena', index) inserta una subcadena, en que posicion voy a meter esa subcadena
-
-str-slice($string,inicio,[final])
-    inicio y final son indices numericos. devolver una nueva subcadena a partir de una cadena que hemos pasado
- */
-
- // todas las cadenas deben llevar "" 
-//es lo recomendable, si se le quitan
-//el cont puede ser recibido como lista
-
-$string: 'Bienvenidos a Escuela Digital';
-
-.string {
- length: str-length($string);
- index-escuela: str-index($string,'Escuela');
- saludo: str-insert($string,' amigos',12);
- company: str-slice($string,str-index($string,'Escuela'));
+$numbers: 1,2,3,4,5;
+div {
+  // width: max(1,2,3,4,5);
+  width: max(nth($numbers, 1), nth($numbers, 4));
+  abs: abs(-10);
+  random: random();
+  random-n: random(100);
 }
