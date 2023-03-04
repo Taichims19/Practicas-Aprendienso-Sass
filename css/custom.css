@@ -1,6 +1,25 @@
-.inspect {
-  value: (k1: v1, k2: v2);
-  variable-exists: true;
-  function-exists: true;
-  width: 30px;
+@charset "UTF-8";
+/*clase7-pt2 funciones para strings
+
+  quote() pone comillas a los string
+    unquote() quita comillas a los string
+    to-upper-case() convierte el string todo a mayusculas
+    to-lower-case()convierte el string todo a minuscula
+
+Las funciones de strings comienzan con str-
+
+str-length($string) ->devuelve el número de caracteres en el string
+
+str-index($string,'subcadena') -> nos devuelve indice de la subcadena, la posicion que tendra la subcadena dentro de la cadena mayor
+
+str-insert($string,'subcadena', index) inserta una subcadena, en que posicion voy a meter esa subcadena
+
+str-slice($string,inicio,[final])
+    inicio y final son indices numericos. devolver una nueva subcadena a partir de una cadena que hemos pasado
+ */
+.string {
+  length: 29;
+  index-escuela: 15;
+  saludo: "Bienvenidos amigos a Escuela Digital";
+  company: "Escuela Digital";
 }/*# sourceMappingURL=custom.css.map */

@@ -1,34 +1,32 @@
 @use "sass:math";
- //funciones de introspeccion
- //type-of()
- //unit()
- //unitless
- //inspect() cuando tenemos problemas para compilar
- //inspect nos ayuda saber que valor es el que estamos 
- //compilando y saber cual es el posible error al ver el valor 
- //que nos estamos trayendo 
- //las siguientes evaluan si existen
- //las variables, funciones o mixins
-      //variable-exists (variable)
-      //function-exists(funcionName)
-      //mixin-exists(mixinName) 
-//call () como primer parametro
-//pasamos a la funcion y como segundo
-//parametro el valor
+ /*clase7-pt2 funciones para strings
 
- $var:20px;
-$map: (
-k1: v1,
-k2: v2
-);
-@function double($val){
-  @return $val * 2;
+  quote() pone comillas a los string
+    unquote() quita comillas a los string
+    to-upper-case() convierte el string todo a mayusculas
+    to-lower-case()convierte el string todo a minuscula
+
+Las funciones de strings comienzan con str-
+
+str-length($string) ->devuelve el número de caracteres en el string
+
+str-index($string,'subcadena') -> nos devuelve indice de la subcadena, la posicion que tendra la subcadena dentro de la cadena mayor
+
+str-insert($string,'subcadena', index) inserta una subcadena, en que posicion voy a meter esa subcadena
+
+str-slice($string,inicio,[final])
+    inicio y final son indices numericos. devolver una nueva subcadena a partir de una cadena que hemos pasado
+ */
+
+ // todas las cadenas deben llevar "" 
+//es lo recomendable, si se le quitan
+//el cont puede ser recibido como lista
+
+$string: 'Bienvenidos a Escuela Digital';
+
+.string {
+ length: str-length($string);
+ index-escuela: str-index($string,'Escuela');
+ saludo: str-insert($string,' amigos',12);
+ company: str-slice($string,str-index($string,'Escuela'));
 }
-
-.inspect {
-  value: inspect($map);
-  variable-exists: variable-exists(map);
-  function-exists:function-exists(double);
-  width: call(double,15px);
-}
-
