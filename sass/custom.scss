@@ -1,37 +1,31 @@
 @use "sass:math";
- /* 
-clase7-pt3 numbers
-  round()redondea el numero mas cercano
-  mas dinamico 1.5 hacia arriba
-  1.4 hacia abajo
-  percentage()da el valor en porcentaje
+ /* Clase7-pt4 Lists
+  Funciones de listas
 
-  floor(number)para redondear hacia 
-  abajo 3.5 = 3
-  ceil(number)para redondear hacia 
-  arriba 3.4 = 4
+  nth($list,index)recuperar un valor de una lista
+  lenght($list)nos devuelve la longitud de la lista, el numero de elementos que tiene
 
-  // Nota: max y min no reciben listas como parametros
-    max(numbers...)el numero mayor de una serie
-    de numeros
-    min(numbers...)el numero menor de una serie
-    de numeros
-solo aceptan numeros como parametros,no
-listas
-  // devuelve el valor absoluto (sin signo)
-    abs(number) obtener el valor absoluto de
-    un numero (sin el signo)
+  join($list1,$list2) -> concatena listas
+    usa el separador del primer argumento
+    o se puede especificar el separador
+    como tercer argumento (comma | space)
 
-  random([limite]) para obtener un numero
-  aleatorio 0 a 1 si no escribimos nada []significa que es opcional el parametro
+  append($list,value,[separator])[]opcional, append sirve para añadir un nuevo elemento a una lista
+
+  zip($list1,$list2)
+    Crea una lista multidimensional con las
+    listas pasadas como argumentos
 
 */
 
-$numbers: 1,2,3,4,5;
-div {
-  // width: max(1,2,3,4,5);
-  width: max(nth($numbers, 1), nth($numbers, 4));
-  abs: abs(-10);
-  random: random();
-  random-n: random(100);
+$colors: red green blue;
+$letters: 'a', 'b', 'c';
+$colors-letters: zip($colors,$letters);
+
+.lists {
+  $local-colors: append($colors,yellow);
+  join: join($colors,$letters,space);
+  colors: $local-colors;
+  colors-letters: nth(nth($colors-letters,2),2);
+  colors-letters-2: inspect($colors-letters);
 }
