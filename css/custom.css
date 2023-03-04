@@ -1,25 +1,29 @@
-@charset "UTF-8";
-/* Clase7-pt4 Lists
-  Funciones de listas
-
-  nth($list,index)recuperar un valor de una lista
-  lenght($list)nos devuelve la longitud de la lista, el numero de elementos que tiene
-
-  join($list1,$list2) -> concatena listas
-    usa el separador del primer argumento
-    o se puede especificar el separador
-    como tercer argumento (comma | space)
-
-  append($list,value,[separator])[]opcional, append sirve para añadir un nuevo elemento a una lista
-
-  zip($list1,$list2)
-    Crea una lista multidimensional con las
-    listas pasadas como argumentos
-
+/* Clase7-pt5
+Funciones para mapas
+  map-get($map,$key)recorre el mapa y devuelve un valor
+  map-keys($map);devuelve las claves,una lista
+  map-values($map);devuelve los valores
+  map-has-key($map,$key)permite determinar si un mapa tiene o no tiene una clave adentro
+  map-merge($map1,$map2)se usa para juntar mapas
+  k= de key 
+  v=value
 */
-.lists {
-  join: red green blue "a" "b" "c";
-  colors: red green blue yellow;
-  colors-letters: "b";
-  colors-letters-2: red "a", green "b", blue "c";
+.map {
+  map-merge: (k1: v1, k2: v2, k-1: v-1, k-2: v-2);
+  map-keys: k1, k2, k-1, k-2;
+  map-values: v1, v2, v-1, v-2;
+}
+
+.box {
+  color: red;
+}
+@media screen and (min-width: 64em) {
+  .box {
+    color: yellow;
+  }
+}
+@media screen and (min-width: 32.8125em) {
+  .box {
+    color: green;
+  }
 }/*# sourceMappingURL=custom.css.map */
