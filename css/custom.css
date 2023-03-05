@@ -1,17 +1,16 @@
-/* Clase7-Pt6 Selectores
-  Selectores
-    selector-nest($selector1,$selector2)
-      Crea un selector anidado (nested)usando los 2 selectores
-    selector-append($selector1,$selector2)
-      Crea un selector nuevo uniendo
-      los dos selectores
+/* Clase7-Pt7 Others
+  if(condicion,if value, else value)
+    equivalente al operador ternario
+if()equivalente al operador ternario; es un if como compriomido.devuelve true o false
+  unique-id()
+    genera un string aleatorio unico en el scope actual
 
-para sass los selectores pued en ser listas o strings
 */
-ul li {
-  display: block;
+.if {
+  width: 20px;
+  unique-id: uyrjbj3;
 }
 
-a.button {
-  display: block;
+.else {
+  unique-id: uyrjbjw;
 }/*# sourceMappingURL=custom.css.map */

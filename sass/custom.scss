@@ -1,29 +1,20 @@
 @use "sass:math";
-/* Clase7-Pt6 Selectores
-  Selectores
-    selector-nest($selector1,$selector2)
-      Crea un selector anidado (nested)usando los 2 selectores
-    selector-append($selector1,$selector2)
-      Crea un selector nuevo uniendo
-      los dos selectores
-
-para sass los selectores pued en ser listas o strings
+/* Clase7-Pt7 Others
+  if(condicion,if value, else value)
+    equivalente al operador ternario
+if()equivalente al operador ternario; es un if como compriomido.devuelve true o false
+  unique-id()
+    genera un string aleatorio unico en el scope actual
+  
 */
 
-@mixin s-nest($sel1,$sel2){
-  $selector: selector-nest($sel1,$sel2);
-  #{$selector}{
-    display: block;
-  }
+$var: false;
+
+.if {
+  width: if($var,10px,20px);
+  unique-id: unique-id();
 }
 
-@include s-nest('ul','li');
-
-@mixin s-append($sel1,$sel2){
-  $selector: selector-append($sel1,$sel2);
-  #{$selector}{
-    display: block;
-  }
+.else {
+  unique-id: unique-id();
 }
-
-@include s-append('a','.button');
