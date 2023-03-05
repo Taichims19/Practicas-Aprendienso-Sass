@@ -1,29 +1,17 @@
-/* Clase7-pt5
-Funciones para mapas
-  map-get($map,$key)recorre el mapa y devuelve un valor
-  map-keys($map);devuelve las claves,una lista
-  map-values($map);devuelve los valores
-  map-has-key($map,$key)permite determinar si un mapa tiene o no tiene una clave adentro
-  map-merge($map1,$map2)se usa para juntar mapas
-  k= de key 
-  v=value
+/* Clase7-Pt6 Selectores
+  Selectores
+    selector-nest($selector1,$selector2)
+      Crea un selector anidado (nested)usando los 2 selectores
+    selector-append($selector1,$selector2)
+      Crea un selector nuevo uniendo
+      los dos selectores
+
+para sass los selectores pued en ser listas o strings
 */
-.map {
-  map-merge: (k1: v1, k2: v2, k-1: v-1, k-2: v-2);
-  map-keys: k1, k2, k-1, k-2;
-  map-values: v1, v2, v-1, v-2;
+ul li {
+  display: block;
 }
 
-.box {
-  color: red;
-}
-@media screen and (min-width: 64em) {
-  .box {
-    color: yellow;
-  }
-}
-@media screen and (min-width: 32.8125em) {
-  .box {
-    color: green;
-  }
+a.button {
+  display: block;
 }/*# sourceMappingURL=custom.css.map */

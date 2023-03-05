@@ -1,65 +1,29 @@
 @use "sass:math";
- /* Clase7-pt5
-Funciones para mapas
-  map-get($map,$key)recorre el mapa y devuelve un valor
-  map-keys($map);devuelve las claves,una lista
-  map-values($map);devuelve los valores
-  map-has-key($map,$key)permite determinar si un mapa tiene o no tiene una clave adentro
-  map-merge($map1,$map2)se usa para juntar mapas
-  k= de key 
-  v=value
+/* Clase7-Pt6 Selectores
+  Selectores
+    selector-nest($selector1,$selector2)
+      Crea un selector anidado (nested)usando los 2 selectores
+    selector-append($selector1,$selector2)
+      Crea un selector nuevo uniendo
+      los dos selectores
+
+para sass los selectores pued en ser listas o strings
 */
 
-$map1: (
-  k1: v1,
-  k2: v2
-);
-
-$map2: (
-  k-1: v-1,
-  k-2: v-2
-);
-
-$map3: map-merge($map1,$map2);
-
-.map {
-  map-merge: inspect($map3);
-  map-keys: map-keys($map3);
-  map-values: map-values($map3);
-}
-
-@function em($el,$parent:16px){
-  @return ($el / $parent) * 1em;
-}
-
-
-// Ejemplo map-has-key
-$breakpoints: (
-  small: em(360px),
-  medium: em(768px),
-  large: em(1024px),
-  x-large: em(1400px)
-);
-
-@mixin from($breakpoint){
-  @if map-has-key($breakpoints,$breakpoint){
-    @media screen and (min-width: map-get($breakpoints,$breakpoint)){
-      @content;
-    }
-  } @else {
-    @media screen and (min-width: $breakpoint) {
-      @content;
-    }
+@mixin s-nest($sel1,$sel2){
+  $selector: selector-nest($sel1,$sel2);
+  #{$selector}{
+    display: block;
   }
 }
 
-.box {
-  color: red;
-  @include from(large) {
-    color: yellow;
-  }
+@include s-nest('ul','li');
 
-  @include from(em(525px)){
-    color: green;
+@mixin s-append($sel1,$sel2){
+  $selector: selector-append($sel1,$sel2);
+  #{$selector}{
+    display: block;
   }
 }
+
+@include s-append('a','.button');
