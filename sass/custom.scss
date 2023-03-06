@@ -1,20 +1,37 @@
 @use "sass:math";
-/* Clase7-Pt7 Others
-  if(condicion,if value, else value)
-    equivalente al operador ternario
-if()equivalente al operador ternario; es un if como compriomido.devuelve true o false
-  unique-id()
-    genera un string aleatorio unico en el scope actual
-  
-*/
-
-$var: false;
-
-.if {
-  width: if($var,10px,20px);
-  unique-id: unique-id();
+body {
+  background-color: #111;
 }
 
-.else {
-  unique-id: unique-id();
+$height: 200;
+@function randomColor(){
+  @return rgb(random(255),0,0);
+}
+
+
+.bars {
+  display: flex;
+  width: 90%;
+  margin: 5em auto 0;
+  align-items: flex-end;
+  height: $height * 1px;
+}
+
+.bar {
+  flex: auto;
+  border: 1px solid rgba(#fff,.3);
+  @for $i from 1 through 50 {
+    &:nth-child(#{$i}){
+      $unique-id: unique-id();
+      height: random($height) * 1px;
+      background-color: randomColor();
+      animation: $unique-id 1s linear infinite alternate;
+      @keyframes #{$unique-id} {
+        to {
+          height: random($height) * 1px;
+          background-color: randomColor();
+        }
+      }
+    }
+  }
 }

@@ -1,16 +1,922 @@
-/* Clase7-Pt7 Others
-  if(condicion,if value, else value)
-    equivalente al operador ternario
-if()equivalente al operador ternario; es un if como compriomido.devuelve true o false
-  unique-id()
-    genera un string aleatorio unico en el scope actual
-
-*/
-.if {
-  width: 20px;
-  unique-id: uyrjbj3;
+body {
+  background-color: #111;
 }
 
-.else {
-  unique-id: uyrjbjw;
+.bars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 5em auto 0;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 200px;
+}
+
+.bar {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.bar:nth-child(1) {
+  height: 9px;
+  background-color: rgb(137, 0, 0);
+  -webkit-animation: uxeqbdn 1s linear infinite alternate;
+          animation: uxeqbdn 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbdn {
+  to {
+    height: 86px;
+    background-color: rgb(88, 0, 0);
+  }
+}
+@keyframes uxeqbdn {
+  to {
+    height: 86px;
+    background-color: rgb(88, 0, 0);
+  }
+}
+.bar:nth-child(2) {
+  height: 55px;
+  background-color: rgb(247, 0, 0);
+  -webkit-animation: uxeqbek 1s linear infinite alternate;
+          animation: uxeqbek 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbek {
+  to {
+    height: 182px;
+    background-color: rgb(29, 0, 0);
+  }
+}
+@keyframes uxeqbek {
+  to {
+    height: 182px;
+    background-color: rgb(29, 0, 0);
+  }
+}
+.bar:nth-child(3) {
+  height: 48px;
+  background-color: rgb(158, 0, 0);
+  -webkit-animation: uxeqbey 1s linear infinite alternate;
+          animation: uxeqbey 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbey {
+  to {
+    height: 26px;
+    background-color: rgb(254, 0, 0);
+  }
+}
+@keyframes uxeqbey {
+  to {
+    height: 26px;
+    background-color: rgb(254, 0, 0);
+  }
+}
+.bar:nth-child(4) {
+  height: 173px;
+  background-color: rgb(252, 0, 0);
+  -webkit-animation: uxeqbfd 1s linear infinite alternate;
+          animation: uxeqbfd 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbfd {
+  to {
+    height: 12px;
+    background-color: rgb(23, 0, 0);
+  }
+}
+@keyframes uxeqbfd {
+  to {
+    height: 12px;
+    background-color: rgb(23, 0, 0);
+  }
+}
+.bar:nth-child(5) {
+  height: 55px;
+  background-color: rgb(59, 0, 0);
+  -webkit-animation: uxeqbga 1s linear infinite alternate;
+          animation: uxeqbga 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbga {
+  to {
+    height: 108px;
+    background-color: rgb(26, 0, 0);
+  }
+}
+@keyframes uxeqbga {
+  to {
+    height: 108px;
+    background-color: rgb(26, 0, 0);
+  }
+}
+.bar:nth-child(6) {
+  height: 181px;
+  background-color: rgb(47, 0, 0);
+  -webkit-animation: uxeqbgs 1s linear infinite alternate;
+          animation: uxeqbgs 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbgs {
+  to {
+    height: 136px;
+    background-color: rgb(236, 0, 0);
+  }
+}
+@keyframes uxeqbgs {
+  to {
+    height: 136px;
+    background-color: rgb(236, 0, 0);
+  }
+}
+.bar:nth-child(7) {
+  height: 99px;
+  background-color: rgb(19, 0, 0);
+  -webkit-animation: uxeqbhe 1s linear infinite alternate;
+          animation: uxeqbhe 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbhe {
+  to {
+    height: 193px;
+    background-color: rgb(245, 0, 0);
+  }
+}
+@keyframes uxeqbhe {
+  to {
+    height: 193px;
+    background-color: rgb(245, 0, 0);
+  }
+}
+.bar:nth-child(8) {
+  height: 172px;
+  background-color: rgb(63, 0, 0);
+  -webkit-animation: uxeqbi5 1s linear infinite alternate;
+          animation: uxeqbi5 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbi5 {
+  to {
+    height: 192px;
+    background-color: rgb(139, 0, 0);
+  }
+}
+@keyframes uxeqbi5 {
+  to {
+    height: 192px;
+    background-color: rgb(139, 0, 0);
+  }
+}
+.bar:nth-child(9) {
+  height: 72px;
+  background-color: rgb(196, 0, 0);
+  -webkit-animation: uxeqbix 1s linear infinite alternate;
+          animation: uxeqbix 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbix {
+  to {
+    height: 148px;
+    background-color: rgb(172, 0, 0);
+  }
+}
+@keyframes uxeqbix {
+  to {
+    height: 148px;
+    background-color: rgb(172, 0, 0);
+  }
+}
+.bar:nth-child(10) {
+  height: 16px;
+  background-color: rgb(180, 0, 0);
+  -webkit-animation: uxeqbju 1s linear infinite alternate;
+          animation: uxeqbju 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbju {
+  to {
+    height: 16px;
+    background-color: rgb(216, 0, 0);
+  }
+}
+@keyframes uxeqbju {
+  to {
+    height: 16px;
+    background-color: rgb(216, 0, 0);
+  }
+}
+.bar:nth-child(11) {
+  height: 112px;
+  background-color: rgb(52, 0, 0);
+  -webkit-animation: uxeqbk8 1s linear infinite alternate;
+          animation: uxeqbk8 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbk8 {
+  to {
+    height: 103px;
+    background-color: rgb(20, 0, 0);
+  }
+}
+@keyframes uxeqbk8 {
+  to {
+    height: 103px;
+    background-color: rgb(20, 0, 0);
+  }
+}
+.bar:nth-child(12) {
+  height: 52px;
+  background-color: rgb(157, 0, 0);
+  -webkit-animation: uxeqbkt 1s linear infinite alternate;
+          animation: uxeqbkt 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbkt {
+  to {
+    height: 42px;
+    background-color: rgb(62, 0, 0);
+  }
+}
+@keyframes uxeqbkt {
+  to {
+    height: 42px;
+    background-color: rgb(62, 0, 0);
+  }
+}
+.bar:nth-child(13) {
+  height: 55px;
+  background-color: rgb(163, 0, 0);
+  -webkit-animation: uxeqbl3 1s linear infinite alternate;
+          animation: uxeqbl3 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbl3 {
+  to {
+    height: 127px;
+    background-color: rgb(186, 0, 0);
+  }
+}
+@keyframes uxeqbl3 {
+  to {
+    height: 127px;
+    background-color: rgb(186, 0, 0);
+  }
+}
+.bar:nth-child(14) {
+  height: 62px;
+  background-color: rgb(59, 0, 0);
+  -webkit-animation: uxeqbl7 1s linear infinite alternate;
+          animation: uxeqbl7 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbl7 {
+  to {
+    height: 135px;
+    background-color: rgb(24, 0, 0);
+  }
+}
+@keyframes uxeqbl7 {
+  to {
+    height: 135px;
+    background-color: rgb(24, 0, 0);
+  }
+}
+.bar:nth-child(15) {
+  height: 67px;
+  background-color: rgb(19, 0, 0);
+  -webkit-animation: uxeqblw 1s linear infinite alternate;
+          animation: uxeqblw 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqblw {
+  to {
+    height: 28px;
+    background-color: rgb(208, 0, 0);
+  }
+}
+@keyframes uxeqblw {
+  to {
+    height: 28px;
+    background-color: rgb(208, 0, 0);
+  }
+}
+.bar:nth-child(16) {
+  height: 73px;
+  background-color: rgb(163, 0, 0);
+  -webkit-animation: uxeqbm3 1s linear infinite alternate;
+          animation: uxeqbm3 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbm3 {
+  to {
+    height: 76px;
+    background-color: rgb(148, 0, 0);
+  }
+}
+@keyframes uxeqbm3 {
+  to {
+    height: 76px;
+    background-color: rgb(148, 0, 0);
+  }
+}
+.bar:nth-child(17) {
+  height: 157px;
+  background-color: rgb(195, 0, 0);
+  -webkit-animation: uxeqbms 1s linear infinite alternate;
+          animation: uxeqbms 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbms {
+  to {
+    height: 15px;
+    background-color: rgb(83, 0, 0);
+  }
+}
+@keyframes uxeqbms {
+  to {
+    height: 15px;
+    background-color: rgb(83, 0, 0);
+  }
+}
+.bar:nth-child(18) {
+  height: 167px;
+  background-color: rgb(209, 0, 0);
+  -webkit-animation: uxeqbne 1s linear infinite alternate;
+          animation: uxeqbne 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbne {
+  to {
+    height: 59px;
+    background-color: rgb(49, 0, 0);
+  }
+}
+@keyframes uxeqbne {
+  to {
+    height: 59px;
+    background-color: rgb(49, 0, 0);
+  }
+}
+.bar:nth-child(19) {
+  height: 196px;
+  background-color: rgb(42, 0, 0);
+  -webkit-animation: uxeqbny 1s linear infinite alternate;
+          animation: uxeqbny 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbny {
+  to {
+    height: 159px;
+    background-color: rgb(218, 0, 0);
+  }
+}
+@keyframes uxeqbny {
+  to {
+    height: 159px;
+    background-color: rgb(218, 0, 0);
+  }
+}
+.bar:nth-child(20) {
+  height: 94px;
+  background-color: rgb(163, 0, 0);
+  -webkit-animation: uxeqbo6 1s linear infinite alternate;
+          animation: uxeqbo6 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbo6 {
+  to {
+    height: 86px;
+    background-color: rgb(60, 0, 0);
+  }
+}
+@keyframes uxeqbo6 {
+  to {
+    height: 86px;
+    background-color: rgb(60, 0, 0);
+  }
+}
+.bar:nth-child(21) {
+  height: 27px;
+  background-color: rgb(86, 0, 0);
+  -webkit-animation: uxeqbp4 1s linear infinite alternate;
+          animation: uxeqbp4 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbp4 {
+  to {
+    height: 49px;
+    background-color: rgb(237, 0, 0);
+  }
+}
+@keyframes uxeqbp4 {
+  to {
+    height: 49px;
+    background-color: rgb(237, 0, 0);
+  }
+}
+.bar:nth-child(22) {
+  height: 76px;
+  background-color: rgb(244, 0, 0);
+  -webkit-animation: uxeqbpr 1s linear infinite alternate;
+          animation: uxeqbpr 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbpr {
+  to {
+    height: 189px;
+    background-color: rgb(185, 0, 0);
+  }
+}
+@keyframes uxeqbpr {
+  to {
+    height: 189px;
+    background-color: rgb(185, 0, 0);
+  }
+}
+.bar:nth-child(23) {
+  height: 86px;
+  background-color: rgb(165, 0, 0);
+  -webkit-animation: uxeqbpv 1s linear infinite alternate;
+          animation: uxeqbpv 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbpv {
+  to {
+    height: 8px;
+    background-color: rgb(117, 0, 0);
+  }
+}
+@keyframes uxeqbpv {
+  to {
+    height: 8px;
+    background-color: rgb(117, 0, 0);
+  }
+}
+.bar:nth-child(24) {
+  height: 163px;
+  background-color: rgb(125, 0, 0);
+  -webkit-animation: uxeqbpz 1s linear infinite alternate;
+          animation: uxeqbpz 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbpz {
+  to {
+    height: 36px;
+    background-color: rgb(13, 0, 0);
+  }
+}
+@keyframes uxeqbpz {
+  to {
+    height: 36px;
+    background-color: rgb(13, 0, 0);
+  }
+}
+.bar:nth-child(25) {
+  height: 110px;
+  background-color: rgb(76, 0, 0);
+  -webkit-animation: uxeqbqs 1s linear infinite alternate;
+          animation: uxeqbqs 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbqs {
+  to {
+    height: 24px;
+    background-color: rgb(98, 0, 0);
+  }
+}
+@keyframes uxeqbqs {
+  to {
+    height: 24px;
+    background-color: rgb(98, 0, 0);
+  }
+}
+.bar:nth-child(26) {
+  height: 49px;
+  background-color: rgb(126, 0, 0);
+  -webkit-animation: uxeqbr8 1s linear infinite alternate;
+          animation: uxeqbr8 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbr8 {
+  to {
+    height: 28px;
+    background-color: rgb(171, 0, 0);
+  }
+}
+@keyframes uxeqbr8 {
+  to {
+    height: 28px;
+    background-color: rgb(171, 0, 0);
+  }
+}
+.bar:nth-child(27) {
+  height: 53px;
+  background-color: rgb(158, 0, 0);
+  -webkit-animation: uxeqbrj 1s linear infinite alternate;
+          animation: uxeqbrj 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbrj {
+  to {
+    height: 148px;
+    background-color: rgb(138, 0, 0);
+  }
+}
+@keyframes uxeqbrj {
+  to {
+    height: 148px;
+    background-color: rgb(138, 0, 0);
+  }
+}
+.bar:nth-child(28) {
+  height: 115px;
+  background-color: rgb(39, 0, 0);
+  -webkit-animation: uxeqbrl 1s linear infinite alternate;
+          animation: uxeqbrl 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbrl {
+  to {
+    height: 70px;
+    background-color: rgb(204, 0, 0);
+  }
+}
+@keyframes uxeqbrl {
+  to {
+    height: 70px;
+    background-color: rgb(204, 0, 0);
+  }
+}
+.bar:nth-child(29) {
+  height: 92px;
+  background-color: rgb(215, 0, 0);
+  -webkit-animation: uxeqbrv 1s linear infinite alternate;
+          animation: uxeqbrv 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbrv {
+  to {
+    height: 67px;
+    background-color: rgb(207, 0, 0);
+  }
+}
+@keyframes uxeqbrv {
+  to {
+    height: 67px;
+    background-color: rgb(207, 0, 0);
+  }
+}
+.bar:nth-child(30) {
+  height: 198px;
+  background-color: rgb(180, 0, 0);
+  -webkit-animation: uxeqbsb 1s linear infinite alternate;
+          animation: uxeqbsb 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbsb {
+  to {
+    height: 58px;
+    background-color: rgb(209, 0, 0);
+  }
+}
+@keyframes uxeqbsb {
+  to {
+    height: 58px;
+    background-color: rgb(209, 0, 0);
+  }
+}
+.bar:nth-child(31) {
+  height: 86px;
+  background-color: rgb(6, 0, 0);
+  -webkit-animation: uxeqbsm 1s linear infinite alternate;
+          animation: uxeqbsm 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbsm {
+  to {
+    height: 14px;
+    background-color: rgb(130, 0, 0);
+  }
+}
+@keyframes uxeqbsm {
+  to {
+    height: 14px;
+    background-color: rgb(130, 0, 0);
+  }
+}
+.bar:nth-child(32) {
+  height: 22px;
+  background-color: rgb(104, 0, 0);
+  -webkit-animation: uxeqbsx 1s linear infinite alternate;
+          animation: uxeqbsx 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbsx {
+  to {
+    height: 155px;
+    background-color: rgb(65, 0, 0);
+  }
+}
+@keyframes uxeqbsx {
+  to {
+    height: 155px;
+    background-color: rgb(65, 0, 0);
+  }
+}
+.bar:nth-child(33) {
+  height: 68px;
+  background-color: rgb(75, 0, 0);
+  -webkit-animation: uxeqbtw 1s linear infinite alternate;
+          animation: uxeqbtw 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbtw {
+  to {
+    height: 49px;
+    background-color: rgb(132, 0, 0);
+  }
+}
+@keyframes uxeqbtw {
+  to {
+    height: 49px;
+    background-color: rgb(132, 0, 0);
+  }
+}
+.bar:nth-child(34) {
+  height: 123px;
+  background-color: rgb(130, 0, 0);
+  -webkit-animation: uxeqbup 1s linear infinite alternate;
+          animation: uxeqbup 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbup {
+  to {
+    height: 41px;
+    background-color: rgb(240, 0, 0);
+  }
+}
+@keyframes uxeqbup {
+  to {
+    height: 41px;
+    background-color: rgb(240, 0, 0);
+  }
+}
+.bar:nth-child(35) {
+  height: 141px;
+  background-color: rgb(126, 0, 0);
+  -webkit-animation: uxeqbuu 1s linear infinite alternate;
+          animation: uxeqbuu 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbuu {
+  to {
+    height: 156px;
+    background-color: rgb(17, 0, 0);
+  }
+}
+@keyframes uxeqbuu {
+  to {
+    height: 156px;
+    background-color: rgb(17, 0, 0);
+  }
+}
+.bar:nth-child(36) {
+  height: 58px;
+  background-color: rgb(104, 0, 0);
+  -webkit-animation: uxeqbvm 1s linear infinite alternate;
+          animation: uxeqbvm 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbvm {
+  to {
+    height: 75px;
+    background-color: rgb(149, 0, 0);
+  }
+}
+@keyframes uxeqbvm {
+  to {
+    height: 75px;
+    background-color: rgb(149, 0, 0);
+  }
+}
+.bar:nth-child(37) {
+  height: 141px;
+  background-color: rgb(130, 0, 0);
+  -webkit-animation: uxeqbw1 1s linear infinite alternate;
+          animation: uxeqbw1 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbw1 {
+  to {
+    height: 133px;
+    background-color: rgb(52, 0, 0);
+  }
+}
+@keyframes uxeqbw1 {
+  to {
+    height: 133px;
+    background-color: rgb(52, 0, 0);
+  }
+}
+.bar:nth-child(38) {
+  height: 193px;
+  background-color: rgb(134, 0, 0);
+  -webkit-animation: uxeqbw9 1s linear infinite alternate;
+          animation: uxeqbw9 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbw9 {
+  to {
+    height: 117px;
+    background-color: rgb(80, 0, 0);
+  }
+}
+@keyframes uxeqbw9 {
+  to {
+    height: 117px;
+    background-color: rgb(80, 0, 0);
+  }
+}
+.bar:nth-child(39) {
+  height: 165px;
+  background-color: rgb(27, 0, 0);
+  -webkit-animation: uxeqbx0 1s linear infinite alternate;
+          animation: uxeqbx0 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbx0 {
+  to {
+    height: 24px;
+    background-color: rgb(43, 0, 0);
+  }
+}
+@keyframes uxeqbx0 {
+  to {
+    height: 24px;
+    background-color: rgb(43, 0, 0);
+  }
+}
+.bar:nth-child(40) {
+  height: 90px;
+  background-color: rgb(194, 0, 0);
+  -webkit-animation: uxeqbxv 1s linear infinite alternate;
+          animation: uxeqbxv 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbxv {
+  to {
+    height: 159px;
+    background-color: rgb(213, 0, 0);
+  }
+}
+@keyframes uxeqbxv {
+  to {
+    height: 159px;
+    background-color: rgb(213, 0, 0);
+  }
+}
+.bar:nth-child(41) {
+  height: 196px;
+  background-color: rgb(53, 0, 0);
+  -webkit-animation: uxeqbye 1s linear infinite alternate;
+          animation: uxeqbye 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbye {
+  to {
+    height: 167px;
+    background-color: rgb(61, 0, 0);
+  }
+}
+@keyframes uxeqbye {
+  to {
+    height: 167px;
+    background-color: rgb(61, 0, 0);
+  }
+}
+.bar:nth-child(42) {
+  height: 176px;
+  background-color: rgb(202, 0, 0);
+  -webkit-animation: uxeqbyu 1s linear infinite alternate;
+          animation: uxeqbyu 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbyu {
+  to {
+    height: 22px;
+    background-color: rgb(226, 0, 0);
+  }
+}
+@keyframes uxeqbyu {
+  to {
+    height: 22px;
+    background-color: rgb(226, 0, 0);
+  }
+}
+.bar:nth-child(43) {
+  height: 103px;
+  background-color: rgb(48, 0, 0);
+  -webkit-animation: uxeqbz2 1s linear infinite alternate;
+          animation: uxeqbz2 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbz2 {
+  to {
+    height: 108px;
+    background-color: rgb(128, 0, 0);
+  }
+}
+@keyframes uxeqbz2 {
+  to {
+    height: 108px;
+    background-color: rgb(128, 0, 0);
+  }
+}
+.bar:nth-child(44) {
+  height: 187px;
+  background-color: rgb(223, 0, 0);
+  -webkit-animation: uxeqbzc 1s linear infinite alternate;
+          animation: uxeqbzc 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqbzc {
+  to {
+    height: 40px;
+    background-color: rgb(180, 0, 0);
+  }
+}
+@keyframes uxeqbzc {
+  to {
+    height: 40px;
+    background-color: rgb(180, 0, 0);
+  }
+}
+.bar:nth-child(45) {
+  height: 195px;
+  background-color: rgb(223, 0, 0);
+  -webkit-animation: uxeqc09 1s linear infinite alternate;
+          animation: uxeqc09 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqc09 {
+  to {
+    height: 100px;
+    background-color: rgb(197, 0, 0);
+  }
+}
+@keyframes uxeqc09 {
+  to {
+    height: 100px;
+    background-color: rgb(197, 0, 0);
+  }
+}
+.bar:nth-child(46) {
+  height: 194px;
+  background-color: rgb(198, 0, 0);
+  -webkit-animation: uxeqc0c 1s linear infinite alternate;
+          animation: uxeqc0c 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqc0c {
+  to {
+    height: 111px;
+    background-color: rgb(115, 0, 0);
+  }
+}
+@keyframes uxeqc0c {
+  to {
+    height: 111px;
+    background-color: rgb(115, 0, 0);
+  }
+}
+.bar:nth-child(47) {
+  height: 21px;
+  background-color: rgb(120, 0, 0);
+  -webkit-animation: uxeqc0g 1s linear infinite alternate;
+          animation: uxeqc0g 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqc0g {
+  to {
+    height: 139px;
+    background-color: rgb(67, 0, 0);
+  }
+}
+@keyframes uxeqc0g {
+  to {
+    height: 139px;
+    background-color: rgb(67, 0, 0);
+  }
+}
+.bar:nth-child(48) {
+  height: 112px;
+  background-color: rgb(110, 0, 0);
+  -webkit-animation: uxeqc17 1s linear infinite alternate;
+          animation: uxeqc17 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqc17 {
+  to {
+    height: 24px;
+    background-color: rgb(17, 0, 0);
+  }
+}
+@keyframes uxeqc17 {
+  to {
+    height: 24px;
+    background-color: rgb(17, 0, 0);
+  }
+}
+.bar:nth-child(49) {
+  height: 166px;
+  background-color: rgb(9, 0, 0);
+  -webkit-animation: uxeqc1g 1s linear infinite alternate;
+          animation: uxeqc1g 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqc1g {
+  to {
+    height: 93px;
+    background-color: rgb(234, 0, 0);
+  }
+}
+@keyframes uxeqc1g {
+  to {
+    height: 93px;
+    background-color: rgb(234, 0, 0);
+  }
+}
+.bar:nth-child(50) {
+  height: 153px;
+  background-color: rgb(121, 0, 0);
+  -webkit-animation: uxeqc1u 1s linear infinite alternate;
+          animation: uxeqc1u 1s linear infinite alternate;
+}
+@-webkit-keyframes uxeqc1u {
+  to {
+    height: 132px;
+    background-color: rgb(62, 0, 0);
+  }
+}
+@keyframes uxeqc1u {
+  to {
+    height: 132px;
+    background-color: rgb(62, 0, 0);
+  }
 }/*# sourceMappingURL=custom.css.map */
