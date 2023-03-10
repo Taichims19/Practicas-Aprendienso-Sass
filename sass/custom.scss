@@ -1,37 +1,89 @@
 @use "sass:math";
-body {
-  background-color: #111;
+
+ //$rgb: rgb(200,20,50);
+ //$hsl: hsl(300,80,50);
+ //$color: lighten($base,20);
+ //$value: lightness($color);
+
+ //Funciones RGB
+ //red(), green(), blue()
+ //rgb(), rgba() se puede aplicar tambien rgba a colores hexadecimales #efefef rgba(#efefef,0.8)
+
+ //Funciones HSL
+ //hue(), saturation(), lightness();
+ //adjust-hue() ajustar el tinte en grados se puede colocar en positivo o negativos
+ //saturate(), toma la saturacion base y la suma. el limita es 100% 
+//desaturate(),toma la desaturacion base y el limite es 0%. ajustar la saturacion
+// lighten()darle mas luminicidad. de 50% para arriba se va perdiendo el color a blanco, darken()darle menos luminicidad. ajustar el brillo
+
+// Colores complementarios e inversos
+ //complement() opuesto en HSL (opuesto en 180deg de hue)
+ //invert() opuesto en RGB (restar de l valor maximo de canal el valor actual)
+
+
+//body {
+//background: complement($hsl);
+//($value: hue(complement($hsl));
+//&:before{
+//content: "#{$value}";
+//font-size: 10em;
+//display: block;
+// text-align: center;
+// }
+// }
+
+
+// body {
+//   background: #111;
+//   margin: 0;
+// }
+
+// @function spectrum($direction){
+//  $color:'linear-gradient(#{$direction}';
+// @for $i from 1 through 360 {
+//    $current-color: hsl($i,100%,50%);
+//  $color: '#{$color}, #{$current-color}';
+// }
+// $color: unquote('#{$color})');
+// @return $color;
+// }
+
+//.spectrum {
+//width: 90%;
+//height: 300px;
+//border: 1px solid white;
+//margin: 2em auto;
+// background: spectrum(to left);
+//}
+
+
+
+.spectrum {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin: 2em auto;
+  position: relative;
+  animation: spectrum 1s linear infinite;
+  @keyframes spectrum {
+    to {
+      transform: rotate(1turn);
+    }
+  }
 }
 
-$height: 200;
-@function randomColor(){
-  @return rgb(random(255),0,0);
-}
-
-
-.bars {
-  display: flex;
-  width: 90%;
-  margin: 5em auto 0;
-  align-items: flex-end;
-  height: $height * 1px;
-}
-
-.bar {
-  flex: auto;
-  border: 1px solid rgba(#fff,.3);
-  @for $i from 1 through 50 {
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 190px;
+  transform-origin: 10px 200px;
+  @for $i from 1 through 360 {
     &:nth-child(#{$i}){
-      $unique-id: unique-id();
-      height: random($height) * 1px;
-      background-color: randomColor();
-      animation: $unique-id 1s linear infinite alternate;
-      @keyframes #{$unique-id} {
-        to {
-          height: random($height) * 1px;
-          background-color: randomColor();
-        }
-      }
+      //box-shadow: 0 0 10px 5px hsl($i,100,50);
+      transform: rotate($i * 1deg);
+      background-color: hsl($i,100%,50%);
     }
   }
 }
