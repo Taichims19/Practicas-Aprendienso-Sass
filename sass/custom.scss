@@ -1,89 +1,86 @@
 @use "sass:math";
+// Directivas @warn @error @debug
+// te Envian mensajes a la terminal
+// Esos mensajes son expresiones
+//en programacion se le conoce como expresion a todo troso de codigo que genera un valor: string, numero, etc
+/*
+@warn envia mensajes de alerta en la terminal pero
+no detiene la ejecucion del compilador
+*/
 
- //$rgb: rgb(200,20,50);
- //$hsl: hsl(300,80,50);
- //$color: lighten($base,20);
- //$value: lightness($color);
+@mixin menu{
+  @warn 'El @mixin menu sera eliminado en la proxima version, por favor use el @mixn ed-menu';
+  margin : 0;
+  padding : 0;
+  list-style: none;
+}
 
- //Funciones RGB
- //red(), green(), blue()
- //rgb(), rgba() se puede aplicar tambien rgba a colores hexadecimales #efefef rgba(#efefef,0.8)
-
- //Funciones HSL
- //hue(), saturation(), lightness();
- //adjust-hue() ajustar el tinte en grados se puede colocar en positivo o negativos
- //saturate(), toma la saturacion base y la suma. el limita es 100% 
-//desaturate(),toma la desaturacion base y el limite es 0%. ajustar la saturacion
-// lighten()darle mas luminicidad. de 50% para arriba se va perdiendo el color a blanco, darken()darle menos luminicidad. ajustar el brillo
-
-// Colores complementarios e inversos
- //complement() opuesto en HSL (opuesto en 180deg de hue)
- //invert() opuesto en RGB (restar de l valor maximo de canal el valor actual)
-
-
-//body {
-//background: complement($hsl);
-//($value: hue(complement($hsl));
-//&:before{
-//content: "#{$value}";
-//font-size: 10em;
-//display: block;
-// text-align: center;
-// }
-// }
+.menu {
+  @include menu;
+}
 
 
-// body {
-//   background: #111;
-//   margin: 0;
-// }
+/*
+@error envia un mensaje de error y
+detiene la ejecucion del compilador
+*/
 
-// @function spectrum($direction){
-//  $color:'linear-gradient(#{$direction}';
-// @for $i from 1 through 360 {
-//    $current-color: hsl($i,100%,50%);
-//  $color: '#{$color}, #{$current-color}';
-// }
-// $color: unquote('#{$color})');
-// @return $color;
-// }
+@function double($val){
+  $type: type-of($val);
+  @if $type != number {
+    @error 'La funcion double solo acepta un numero como argumento pero ha recibido el #{$type} "#{$val}"';
+  }
+  @return $val * 2;
+}
 
-//.spectrum {
-//width: 90%;
-//height: 300px;
-//border: 1px solid white;
-//margin: 2em auto;
-// background: spectrum(to left);
-//}
+.box {
+  width: double(1);
+}
 
 
+/*
+@debug envia la informacion de la
+expresion recibida
+*/
 
-.spectrum {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  margin: 2em auto;
-  position: relative;
-  animation: spectrum 1s linear infinite;
-  @keyframes spectrum {
-    to {
-      transform: rotate(1turn);
+$list: 1 2 3 4;
+$map: (
+  k1: v1,
+  k2: v2
+);
+
+.debug {
+  @debug type-of($map);
+}
+
+$breakpoints : (
+  s: 320px,
+  m: 768px,
+  l: 1024px,
+  xl: 1400px
+);
+
+@mixin from($breakpoint){
+  @if map-has_key($breakpoints,$breakpoint){
+    @media screen and (min-width: map-get($breakpoints,$breakpoint)) {
+      @content;
     }
+  } @else if type-of($breakpoint) != number{
+    $type: type-of($breakpoint);
+    @error 'El mixin from() recibe un breakpoint valido o un valor numerico en px o em. Pero ha recibido el #{$type} #{$breakpoint}';
+  } @else if unit($breakpoint) == 'px' or unit($breakpoint) == 'em'{
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @error '#{$breakpoint} no es numero valido, use un valor en px o em';
   }
 }
 
-.dot {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  left: 190px;
-  transform-origin: 10px 200px;
-  @for $i from 1 through 360 {
-    &:nth-child(#{$i}){
-      //box-shadow: 0 0 10px 5px hsl($i,100,50);
-      transform: rotate($i * 1deg);
-      background-color: hsl($i,100%,50%);
-    }
+
+.box {
+  color: red;
+  @include from(100em){
+    color: black;
   }
 }
